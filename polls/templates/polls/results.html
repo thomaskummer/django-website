@@ -1,0 +1,19 @@
+{% extends "polls/index.html" %}
+
+{% block title %}
+    <span class="link-light fs-4">Poll app > results</span>
+{% endblock %}
+
+{% block content %}
+
+<h2>{{ question.question_text }}</h2>
+        <ul>
+        {% for choice in question.choice_set.all %}
+            <li>{{ choice.choice_text }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }}</li>
+        {% endfor %}
+        </ul>
+        <a href="{% url 'polls:detail' question.id %}">Vote again?</a>
+        <a href="{% url 'polls:index' %}">Home</a>
+
+{% endblock %}
+

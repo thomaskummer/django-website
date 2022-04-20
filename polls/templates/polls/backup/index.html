@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>This is my world</title>
+    {% load static %}
+    <!-- <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}"> -->
+    <link rel="stylesheet" href="{% static 'polls/bootstrap-dist/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'polls/bootstrap-dist/css/bootstrap.css' %}">
+    <script src="{% static 'polls/bootstrap-dist/js/bootstrap.min.js' %}"></script>
+  </head>
+  <body class="bg-light">
+
+  <nav class="py-3 border-bottomt" style="background-color: #0f693d;">
+    <div class="container d-flex flex-wrap">
+      <ul class="nav me-auto">
+        <li class="nav-item"><a href="#" class="nav-link link-light px-2 active" aria-current="page">Home</a></li>
+        <li class="nav-item"><a href="#" class="nav-link link-light px-2">Features</a></li>
+        <li class="nav-item"><a href="#" class="nav-link link-light px-2">Pricing</a></li>
+        <li class="nav-item"><a href="#" class="nav-link link-light px-2">FAQs</a></li>
+        <li class="nav-item"><a href="#" class="nav-link link-light px-2">About</a></li>
+      </ul>
+      <ul class="nav">
+        <li class="nav-item"><a href="#" class="nav-link link-light px-2">Login</a></li>
+        <li class="nav-item"><a href="#" class="nav-link link-light px-2">Sign up</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="py-4 mb-4 border-bottom" style="background-color: #37C77D;">
+    <div class="container d-flex flex-wrap justify-content-center">
+      <a href="/" class="d-flex align-items-center mb-3 mb-lg-0 me-lg-auto text-dark text-decoration-none">
+        <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
+        <span class="link-light fs-4">Poll app</span>
+      </a>
+      <form class="col-12 col-lg-auto mb-3 mb-lg-0">
+        <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
+      </form>
+    </div>
+  </header>
+
+  <div class="container">
+    <p class="display-6">This is my world</p>
+    <p>Assigned tracks can be found in the following table. Please send me as soon as possible the time you expect for your track, such that we can complete the start time column. Please also send me your mobile number, which I need for our team's registration and our what's app chat. Detailed information about your track can be found.</p>
+
+    {% if latest_question_list %}
+        <ul>
+        {% for question in latest_question_list %}
+            <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No polls are available.</p>
+    {% endif %}
+
+
+  <div class="container">
+  <footer class="py-3 my-4">
+    <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Features</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Pricing</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQs</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
+    </ul>
+    <p class="text-center text-muted">&copy; 2021 Company, Inc</p>
+  </footer>
+  </div>
+
+  </body>
+</html>
+
+

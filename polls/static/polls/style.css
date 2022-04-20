@@ -1,0 +1,29 @@
+
+
+body {
+    width: 600px;
+    margin: 0 auto;
+    background: rgb(250, 250, 250);
+    /*background: white url("images/background.jpg") no-repeat;*/
+}
+
+h1 {
+    color: rgb(66, 66, 66);
+    background-color: rgb(250, 250, 250);
+    /*border: 1px solid black;*/
+}
+
+h2 {
+    color: gray;
+}
+
+p{
+    color: black;
+}
+
+
+li a {
+    color: blue;
+}
+
+
