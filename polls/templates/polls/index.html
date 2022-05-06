@@ -1,15 +1,86 @@
 {% extends "polls/base.html" %}
 
+{% block title %}<p class="display-6">Willkommen!</p>{% endblock %}
+
 {% block content %}
+
+    <p class="lead mb-4">Assigned tracks can be found in the following table. Please send me as soon as possible the time you expect for your track, such that we can complete the start time column. Please also send me your mobile number, which I need for our team's registration and our what's app chat. Detailed information about your track can be found. It is {% now "jS F Y H:i." %}</p>
+
+    <br>
+
+    <!-- Therapeuten Karten -->
+    {% load static %}
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+  <div class="col">
+    <div class="card h-100 shadow">
+      <img src="{% static 'polls/images/generic-card-photo.jpg' %}" class="card-img-top" alt="Patricia Kummer">
+      <div class="card-body">
+        <h5 class="card-title">Patricia Kummer</h5>
+        <!-- <h6 class="text-gray-200">CAS Coaching...</h6> -->
+        <p class="card-text">Coaching bei verschiedenen Problemstellungen wie Küdigung, Scheidung, Pensionierung etc.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card h-100 shadow">
+      <img src="{% static 'polls/images/generic-card-photo.jpg' %}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a short card.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card h-100 shadow">
+      <img src="{% static 'polls/images/generic-card-photo.jpg' %}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card h-100 shadow">
+      <img src="{% static 'polls/images/generic-card-photo.jpg' %}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <br><br>
+
+
+    <!-- Subscribe newsletter -->
+    <div class="col-6 offset-0">
+        <form>
+          <h5>Subscribe to our newsletter</h5>
+          <p>Monthly digest of whats new and exciting from us.</p>
+          <div class="d-flex w-100 gap-2">
+            <label for="newsletter1" class="visually-hidden">Email address</label>
+            <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
+            <button class="btn btn-primary" type="button">Subscribe</button>
+          </div>
+        </form>
+    </div>
+    
+    <br><br>
+
+    <div class="shadow p-4 mb-4 bg-white">Questions</div>
+
+    <!-- List questions -->
     {% if latest_question_list %}
         <ul>
         {% for question in latest_question_list %}
             <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
         {% endfor %}
         </ul>
-        It is {% now "l\, \t\h\e jS \o\f F" %}
     {% else %}
         <p>No polls are available.</p>
     {% endif %}
+
 {% endblock %}
 

@@ -1,0 +1,17 @@
+<!-- Breadcrump -->
+{% load static %}
+
+<nav aria-label="breadcrumb">
+{# <nav style="--bs-breadcrumb-divider: '/';" aria-label="breadcrumb"> #}      
+  <ol class="breadcrumb">
+{% comment "House symbol at beginning of breadcrumbs" %} 
+<li class="breadcrumb-item"><a href="#"><img src="{% static 'polls/images/house.svg' %}" alt="Bootstrap" width="25" height="25"> </a></li> 
+{% endcomment %}
+    <li class="breadcrumb-item"><a href="#">Coaching</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Patricia Kummer</li>
+  </ol>
+</nav>
+
+
+<!-- <img src="{% static 'polls/images/chevron-right.svg' %}" alt="Bootstrap" ...> -->
+
