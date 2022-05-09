@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block content %}
-
+{{ block.super }}
 <h2>{{ question.question_text }}</h2>
         <ul>
         {% for choice in question.choice_set.all %}

@@ -1,9 +1,21 @@
 <head>
     <meta charset="utf-8">
-    <title>This is my world</title>
+    <title>Praxis-Enge</title>
     {% load static %}
     <!-- <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}"> -->
     <link rel="stylesheet" href="{% static 'polls/bootstrap-dist/css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'polls/bootstrap-dist/css/bootstrap.css' %}">
     <script src="{% static 'polls/bootstrap-dist/js/bootstrap.min.js' %}"></script>
+
+<!-- Breadcrumb Chevron -->
+<style>
+    .arr-right .breadcrumb-item+.breadcrumb-item::before {
+    content: "›";
+    vertical-align:top;
+    color: #60a2c2;
+    font-size:28px;
+    line-height:20px;
+    }
+</style>
+
 </head>

@@ -3,21 +3,21 @@
 
     {% include 'polls/head.html' %}
 
-<body class="bg-white">
+    <body class="bg-white">
 
-    {% include 'polls/header.html' %}
+        {% include 'polls/header.html' %}
 
-<main class="container bg-white col-lg-8 mx-auto">
-<br>
+        <main class="container bg-white col-lg-8 mx-auto">
+        <br>
 
-    {% include 'polls/breadcrumb.html' %}
+            {% include 'polls/breadcrumb.html' %}
 
-    {% block title %}{% endblock %}
+            {% block title %}{% endblock %}
 
-    {% block content %}{% endblock %}
+            {% block content %}{% endblock %}
 
 
-<br><br><br><br><br>
+            <br><br><br><br><br>
 
 <!-- <ul>
   {% for user in object_list %}
@@ -25,12 +25,17 @@
   {% endfor %}
 </ul> -->
 
-<br><br>
+{% for user in MyUser %}
+    <li class="user">{{ user.user_text }}</li>
+{% endfor %}
+
+            <br><br>
     
-</main>
+        </main>
 
-    {% include 'polls/footer.html' %}
+        {% include 'polls/footer.html' %}
 
-</body>
+    </body>
+
 </html>
 

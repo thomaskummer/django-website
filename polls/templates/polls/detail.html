@@ -1,11 +1,12 @@
 {% extends "polls/index.html" %}
 
 {% block title %}
-    <span class="link-light fs-4">Poll app > details</span>
+    <span class="link-dark fs-4">Poll app > details</span>
 {% endblock %}
 
 
 {% block content %}
+{{ block.super }}
     <form action="{% url 'polls:vote' question.id %}" method="post">
         {% csrf_token %}
         <fieldset>
