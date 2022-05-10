@@ -1,0 +1,62 @@
+{% extends "polls/base.html" %}
+
+{% block title %}<p class="display-6">Group</p>{% endblock %}
+
+{% block content %}
+
+    <p class="lead mb-4">Assigned tracks can be found in the following table. Please send me as soon as possible the time you expect for your track, such that we can complete the start time column. Please also send me your mobile number, which I need for our team's registration and our what's app chat. Detailed information about your track can be found. It is {% now "jS F Y H:i." %}</p>
+
+    <br>
+
+    <!-- Therapeuten Karten -->
+    {% load static %}
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+  <div class="col">
+    <div class="card h-100 shadow">
+      <img src="{% static 'polls/images/generic-card-photo.jpg' %}" class="card-img-top" alt="Patricia Kummer">
+      <div class="card-body">
+        <h5 class="card-title">Patricia Kummer</h5>
+        <!-- <h6 class="text-gray-200">CAS Coaching...</h6> -->
+        <p class="card-text">Coaching bei verschiedenen Problemstellungen wie Kündigung, Scheidung, Pensionierung etc.</p>
+      </div>
+    </div>
+  </div>
+
+<!-- Make loop through all registered therapeuts -->
+{% include 'polls/card.html' with name='Jane Fielding' description='abcd' %}
+
+</div>
+
+
+<br><br>
+
+<!-- Description list -->
+<dl class="row">
+  <dt class="col-sm-3">Fachgebiet</dt>
+  <dd class="col-sm-9">Coaching bei Scheidungen, Kündigungen Pensionierung etc.</dd>
+
+  <dt class="col-sm-3">Ausbildung</dt>
+  <dd class="col-sm-9">Personalfachfrau</dt>
+    <p>CAS in Coaching</p>
+  </dd>
+
+  <dt class="col-sm-3">Therapieangebot</dt>
+  <dd class="col-sm-9">This definition is short, so no extra paragraphs or anything.</dd>
+
+  <dt class="col-sm-3 text-truncate">Email-Adresse</dt>
+  <dd class="col-sm-9">info@herzensvision.ch</dd>
+
+  <dt class="col-sm-3">Webseite</dt>
+  <dd class="col-sm-9">herzensvision.ch</dt>
+</dl>
+
+
+    <br><br>
+
+
+
+    <div class="shadow p-4 mb-4 bg-white">Questions</div>
+
+
+{% endblock %}
+
